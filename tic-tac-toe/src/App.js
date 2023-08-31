@@ -14,6 +14,11 @@ function App() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
+    // 이미 클릭한 곳 재클릭 방지
+    if (squares[i]) {
+      return;
+    }
+
     const nextSquares = squares.slice(); // 배열 복사하기
 
     if (xIsNext) {
